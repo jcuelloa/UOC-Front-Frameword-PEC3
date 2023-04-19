@@ -18,6 +18,7 @@ dog = {
 function baby(dog1: Dog, dog2: Dog): Dog {
   return {
     kind: dog1.kind,
-    weight: (dog1.weight + dog2.weight) / 4
+    weight: (dog1.weight + dog2.weight) / 4,
+    
   } as Dog;
 }
