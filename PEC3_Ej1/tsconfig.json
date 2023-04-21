@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "es6"
     },
-    "files": [],
+    "files": ["first.ts"],
     "include": ["*.ts"],
     "exclude":["node_modules"]
 
