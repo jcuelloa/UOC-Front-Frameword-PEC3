@@ -33,18 +33,18 @@ class TodoService {
     this._commit(this.todos);
   }
 
-  // editTodo(id, updatedText) {
-  //   this.todos = this.todos.map(todo =>
-  //     todo.id === id
-  //       ? new Todo({
-  //           ...todo,
-  //           text: updatedText
-  //         })
-  //       : todo
-  //   );
+  editTodo(id: string, updatedText: string) {
+    this.todos = this.todos.map(todo =>
+      todo.id === id
+        ? new Todo({
+            ...todo,
+            text: updatedText
+          })
+        : todo
+    );
 
-  //   this._commit(this.todos);
-  // }
+    this._commit(this.todos);
+  }
 
   deleteTodo(_id:string) {
     this.todos = this.todos.filter(({ id }) => id !== _id);

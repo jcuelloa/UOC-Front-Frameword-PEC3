@@ -20,17 +20,12 @@ class TodoService {
         this.todos.push(new Todo({ text, complete: false }));
         this._commit(this.todos);
     }
-    // editTodo(id, updatedText) {
-    //   this.todos = this.todos.map(todo =>
-    //     todo.id === id
-    //       ? new Todo({
-    //           ...todo,
-    //           text: updatedText
-    //         })
-    //       : todo
-    //   );
-    //   this._commit(this.todos);
-    // }
+    editTodo(id, updatedText) {
+        this.todos = this.todos.map(todo => todo.id === id
+            ? new Todo(Object.assign(Object.assign({}, todo), { text: updatedText }))
+            : todo);
+        this._commit(this.todos);
+    }
     deleteTodo(_id) {
         this.todos = this.todos.filter(({ id }) => id !== _id);
         this._commit(this.todos);

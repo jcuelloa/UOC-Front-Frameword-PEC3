@@ -111,15 +111,18 @@ class TodoView {
             }
         });
     }
-    // bindEditTodo(handler) {
-    //   this.todoList.addEventListener("focusout", event => {
-    //     if (this._temporaryTodoText) {
-    //       const id = event.target.parentElement.id;
-    //       handler(id, this._temporaryTodoText);
-    //       this._temporaryTodoText = "";
-    //     }
-    //   });
-    // }
+    bindEditTodo(handler) {
+        this.todoList.addEventListener("focusout", event => {
+            if (this._temporaryTodoText) {
+                let element;
+                element = event.target;
+                const id = element.parentElement.id;
+                console.log("voy a llamar a mannejador del edit");
+                handler(id, this._temporaryTodoText);
+                this._temporaryTodoText = "";
+            }
+        });
+    }
     bindToggleTodo(handler) {
         this.todoList.addEventListener("change", event => {
             let element;

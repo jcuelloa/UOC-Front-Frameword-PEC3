@@ -6,6 +6,7 @@
 class TodoView {
   app:HTMLElement;  
   form:HTMLElement;
+  
   //input:HTMLElement;  //InputElement;
   input:HTMLInputElement;
 
@@ -19,11 +20,10 @@ class TodoView {
     this.form = this.createElement("form");
     
     this.input = <HTMLInputElement>this.createElement("input");
-    
+   
     // this.input.setAttribute("type","text");
     // this.input.setAttribute("placeholder","Add todo");
     // this.input.setAttribute("name","todo");
-
     this.input.type = "text";
     this.input.placeholder = "Add todo";
     this.input.name = "todo";
@@ -151,16 +151,21 @@ class TodoView {
     });
   }
 
-  // bindEditTodo(handler) {
-  //   this.todoList.addEventListener("focusout", event => {
-  //     if (this._temporaryTodoText) {
-  //       const id = event.target.parentElement.id;
+  bindEditTodo(handler:Function) {
+    this.todoList.addEventListener("focusout", event => {
+      if (this._temporaryTodoText) {
+        
+        let element:HTMLElement;
+        element = <HTMLElement>event.target;
 
-  //       handler(id, this._temporaryTodoText);
-  //       this._temporaryTodoText = "";
-  //     }
-  //   });
-  // }
+        const id = element.parentElement!.id;
+
+        console.log("voy a llamar a mannejador del edit");
+        handler(id, this._temporaryTodoText);
+        this._temporaryTodoText = "";
+      }
+    });
+  }
 
   bindToggleTodo(handler:Function) {
     this.todoList.addEventListener("change", event => {

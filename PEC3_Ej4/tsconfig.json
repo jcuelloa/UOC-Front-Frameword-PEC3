@@ -4,7 +4,7 @@
     "target": "es2015",      //version de javascript a generar. Es la misma que ES6. 
     "module": "commonjs",     //que módulos (piezas de programa) cargar para poder usar.  
     "outDir": "./dist",        //donde se genera la salida, los archivos transpilados .js
-    "rootDir": ".",      //directorio raiz donde está mi proyecto.
+    "rootDir": "./src",      //directorio raiz donde está mi proyecto.
     "strict": true,          //para la comprobación de tipos, modo estricto. Activamos todas las comprobaciones. 
     "incremental": true,     //sobre generación del proyecto, guardar información solo sobre los últimos cambios con respecto a la anterior compilación.
     "tsBuildInfoFile": "./buildcache", //archivo donde guardar la información incremental que hemos indicado antes.
