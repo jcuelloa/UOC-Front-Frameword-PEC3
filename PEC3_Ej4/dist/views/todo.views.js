@@ -111,4 +111,23 @@ class TodoView {
             }
         });
     }
+    // bindEditTodo(handler) {
+    //   this.todoList.addEventListener("focusout", event => {
+    //     if (this._temporaryTodoText) {
+    //       const id = event.target.parentElement.id;
+    //       handler(id, this._temporaryTodoText);
+    //       this._temporaryTodoText = "";
+    //     }
+    //   });
+    // }
+    bindToggleTodo(handler) {
+        this.todoList.addEventListener("change", event => {
+            let element;
+            element = event.target;
+            if (element.type === "checkbox") {
+                const id = element.parentElement.id;
+                handler(id);
+            }
+        });
+    }
 }

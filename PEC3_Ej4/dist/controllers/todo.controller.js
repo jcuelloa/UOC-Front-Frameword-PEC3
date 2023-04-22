@@ -21,6 +21,9 @@ class TodoController {
         this.handleDeleteTodo = (id) => {
             this.service.deleteTodo(id);
         };
+        this.handleToggleTodo = (id) => {
+            this.service.toggleTodo(id);
+        };
         this.service = service;
         this.view = view;
         // Explicit this binding
@@ -28,7 +31,7 @@ class TodoController {
         this.view.bindAddTodo(this.handleAddTodo);
         //    this.view.bindEditTodo(this.handleEditTodo);
         this.view.bindDeleteTodo(this.handleDeleteTodo);
-        //    this.view.bindToggleTodo(this.handleToggleTodo);
+        this.view.bindToggleTodo(this.handleToggleTodo);
         // Display initial todos
         this.onTodoListChanged(this.service.todos);
     }

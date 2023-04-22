@@ -52,11 +52,11 @@ class TodoService {
     this._commit(this.todos);
   }
 
-  // toggleTodo(_id) {
-  //   this.todos = this.todos.map(todo =>
-  //     todo.id === _id ? new Todo({ ...todo, complete: !todo.complete }) : todo
-  //   );
+  toggleTodo(_id:string) {
+    this.todos = this.todos.map(todo =>
+      todo.id === _id ? new Todo({ ...todo, complete: !todo.complete }) : todo
+    );
 
-  //   this._commit(this.todos);
-  // }
+    this._commit(this.todos);
+  }
 }

@@ -20,7 +20,7 @@ class TodoController {
     this.view.bindAddTodo(this.handleAddTodo);
 //    this.view.bindEditTodo(this.handleEditTodo);
     this.view.bindDeleteTodo(this.handleDeleteTodo);
-//    this.view.bindToggleTodo(this.handleToggleTodo);
+    this.view.bindToggleTodo(this.handleToggleTodo);
 
     // Display initial todos
     this.onTodoListChanged(this.service.todos);
@@ -42,7 +42,7 @@ class TodoController {
     this.service.deleteTodo(id);
   };
 
-  // handleToggleTodo = id => {
-  //   this.service.toggleTodo(id);
-  // };
+  handleToggleTodo = (id: string) => {
+    this.service.toggleTodo(id);
+  };
 }

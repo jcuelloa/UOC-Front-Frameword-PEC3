@@ -35,4 +35,8 @@ class TodoService {
         this.todos = this.todos.filter(({ id }) => id !== _id);
         this._commit(this.todos);
     }
+    toggleTodo(_id) {
+        this.todos = this.todos.map(todo => todo.id === _id ? new Todo(Object.assign(Object.assign({}, todo), { complete: !todo.complete })) : todo);
+        this._commit(this.todos);
+    }
 }
