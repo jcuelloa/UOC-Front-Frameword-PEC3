@@ -9,14 +9,14 @@ class Todo {
   text:string;
   complete:boolean;
 
-  public constructor(text: string){
+  public constructor(todo_: { text:string, complete:boolean }){
     
     console.log("creando todo con text.....");
-    console.log(text);
+    console.log(todo_.text);
     
     this.id = this.uuidv4();
-    this.text = text;
-    this.complete = false;
+    this.text = todo_.text;
+    this.complete = todo_.complete;
 
     
 

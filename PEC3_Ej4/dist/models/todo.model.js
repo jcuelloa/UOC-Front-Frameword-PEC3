@@ -5,12 +5,12 @@
  * Manages the data of the application.
  */
 class Todo {
-    constructor(text) {
+    constructor(todo_) {
         console.log("creando todo con text.....");
-        console.log(text);
+        console.log(todo_.text);
         this.id = this.uuidv4();
-        this.text = text;
-        this.complete = false;
+        this.text = todo_.text;
+        this.complete = todo_.complete;
     }
     uuidv4() {
         return '10000000-1000-4000-8000-100000000000'.replace(/[0148]/g, c => {

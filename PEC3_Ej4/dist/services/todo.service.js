@@ -17,7 +17,7 @@ class TodoService {
         localStorage.setItem("todos", JSON.stringify(todos));
     }
     addTodo(text) {
-        this.todos.push(new Todo(text));
+        this.todos.push(new Todo({ text, complete: false }));
         this._commit(this.todos);
     }
     // editTodo(id, updatedText) {

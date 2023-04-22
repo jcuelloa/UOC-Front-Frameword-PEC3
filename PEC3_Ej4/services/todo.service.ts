@@ -5,16 +5,14 @@
  */
 class TodoService {
 
-  todos: Todo[]; // = [];   
+  todos: Todo[];
   onTodoListChanged!: Function;
   
   constructor() {
     //this.todos = [];
     
-   
-
     this.todos = (JSON.parse(localStorage.getItem("todos")!) || []).map(
-      (todo:string) => new Todo(todo)
+      (todo: {text: string; complete: boolean;}) => new Todo(todo)
     );
 
 
@@ -30,7 +28,7 @@ class TodoService {
   }
 
   addTodo(text: string) {
-    this.todos.push(new Todo(text));
+    this.todos.push(new Todo({text, complete:false}));
 
     this._commit(this.todos);
   }
