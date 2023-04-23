@@ -9,9 +9,9 @@
 class TodoController {
   
   service: TodoService;
-  view: any;    /////*********cambiar tipo */
+  view: TodoView;    
   
-  constructor(service: TodoService, view: any) {
+  constructor(service: TodoService, view: TodoView) {
     this.service = service;
     this.view = view;
 
